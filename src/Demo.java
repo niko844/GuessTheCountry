@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class GuessTheCountry {
+public class Demo {
     public static void main(String[] args) {
 
         Map<Integer, String[]> countries = new HashMap<>();
@@ -12,11 +12,11 @@ public class GuessTheCountry {
 
     public static void gameContent(String playAgain, Map<Integer, String[]> countries) {
         Scanner scanner = new Scanner(System.in);
-        int continent = new Random().nextInt(7);
+        int continent = new Random().nextInt(6);
         while (!playAgain.equals("n")) {
             if (playAgain.equals("y")) { //play again
                 playAgain = "";
-                continent = new Random().nextInt(7);
+                continent = new Random().nextInt(6);
             }
             String hint = getHint(continent);
             String randomCountry = getRandomCountry(countries.get(continent));//country getter
@@ -54,8 +54,7 @@ public class GuessTheCountry {
             case 2 -> "The country is in South America";
             case 3 -> "The country is in Asia";
             case 4 -> "The country is in North America";
-            case 5 -> "The country is in Oceania";
-            case 6 -> "The country is in Osmor Islands";  // za mitaka
+            case 5 -> "The country is in Oceania"; // za mitaka
             default -> null;
         };
     }
@@ -188,9 +187,6 @@ public class GuessTheCountry {
                 "Australia", "Fiji", "Kiribati", "Marshall Islands", "Micronesia",
                 "Nauru", "New Zealand", "Palau", "Papua New Guinea", "Samoa",
                 "Solomon Islands", "Tonga", "Tuvalu", "Vanuatu" //Australia
-        });
-        countries.put(6, new String[]{
-                "Mitaka","Sasho","Preso","Denkata","Vikos","Kobomir","Ananas","Cherniq" //Osmor Islands
         });
     }
 }
